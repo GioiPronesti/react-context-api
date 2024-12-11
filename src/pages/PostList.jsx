@@ -1,7 +1,7 @@
 import Card from "../components/posts/Card/Card";
 
 
-export default function BlogPost (){
+export default function PostList (){
 
    
   return (
