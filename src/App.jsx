@@ -6,6 +6,7 @@ import BlankLayout from "./layouts/BlankLayout"
 import NotFound from "./layouts/NotFound"
 import PostsIndex from './pages/posts/Index.jsx';
 import PostShow from "./pages/posts/Show.jsx"
+import PostContext from "./contexts/PostContext.js"
 
 
 /*
@@ -21,20 +22,8 @@ function App() {
   
   return (
     <>
+    <PostContext.Provider value={{}}>
       <BrowserRouter>
-        {/*<Routes>
-          <Route element = {<DefaultLayout/>}> 
-            <Route path="/" component={Home}></Route>
-            <Route path="/about" component={About}></Route>
-            <Route path="/blog" >
-              <Route index component={PostsIndex} ></Route>
-              <Route path=":id"></Route> 
-            <Route />
-          </Route> 
-          <Route element={<BlankLayout/>}>
-            <Route path='*' component={NotFound}></Route>
-          </Route> 
-        </Routes>*/}
         <Routes> 
           <Route element={<DefaultLayout />}> 
             <Route path="/" component={Home} /> 
@@ -49,6 +38,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+    </PostContext.Provider>
     </>
   ) 
 }  
